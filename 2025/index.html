@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>YELO1010 - 2025</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+
+    <!-- Fomtaswome CSS-->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+    />
+
+    <!-- Custom CSS -->
+    <style>
+      /** Global Layout */
+      * {
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      /** PC Layout */
+      @media screen and (min-width: 768px) {
+        .display {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: auto;
+        }
+        .mbti {
+          width: 450px;
+        }
+      }
+      /** Mobile Layout */
+      @media screen and (max-width: 768px) {
+        .display {
+          margin: auto;
+          width: 300px;
+          text-align: center;
+        }
+        .character {
+          display: block;
+          width: 300px;
+        }
+        .mbti {
+          width: 250px;
+        }
+      }
+      /** Character */
+      .transform {
+        transform: scale(-1, 1);
+      }
+      /** Character Information */
+      .character-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .character-info * {
+        margin-left: 0.25rem;
+        margin-right: 0.25rem;
+        text-align: center;
+        font-size: x-large;
+      }
+      .character-info {
+        margin: 10px;
+      }
+      .character-info .fa-info-circle {
+        color: #b58c9c;
+        cursor: pointer;
+      }
+      /** Layout */
+      .gift {
+        padding: 20px;
+      }
+      .fa-info-circle {
+      }
+      .fa-info-circle {
+        color: #b58c9c;
+        cursor: pointer;
+      }
+      /** Layout */
+      .gift {
+        padding: 20px;
+      }
+      .fa-info-circle {
+        color: #b58c9c;
+        cursor: pointer;
+      }
+      /** Layout */
+      .gift {
+        padding: 20px;
+      }
+      .sending {
+        padding: 2rem;
+      }
+      /** Sending Effect */
+      .arrow {
+        transform: translate(-50%, -50%);
+        transform: rotate(90deg);
+        cursor: pointer;
+      }
+      .arrow span {
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        border-bottom: 2.5px solid #533143;
+        border-right: 2.5px solid #533143;
+        transform: rotate(45deg);
+        animation: animate 2s infinite;
+      }
+      .arrow span:nth-child(2) {
+        animation-delay: -0.2s;
+      }
+
+      .arrow span:nth-child(3) {
+        animation-delay: -0.4s;
+      }
+      @keyframes animate {
+        0% {
+          opacity: 0;
+          transform: rotate(45deg) translate(-20px, -20px);
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+          transform: rotate(45deg) translate(20px, 20px);
+        }
+      }
+      /** Gift Effect */
+      .circle {
+        border-radius: 50%;
+        padding: 0.5rem;
+        margin: auto;
+        background-color: #533143;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .btn-gift,
+      .btn-check {
+        background: #9573a4;
+        cursor: pointer;
+      }
+      .button-jittery {
+        animation: jittery 4s infinite;
+      }
+
+      @keyframes jittery {
+        5%,
+        50% {
+          transform: scale(1);
+        }
+        10% {
+          transform: scale(0.9);
+        }
+        15% {
+          transform: scale(1.15);
+        }
+        20% {
+          transform: scale(1.15) rotate(-5deg);
+        }
+        25% {
+          transform: scale(1.15) rotate(5deg);
+        }
+        30% {
+          transform: scale(1.15) rotate(-3deg);
+        }
+        35% {
+          transform: scale(1.15) rotate(2deg);
+        }
+        40% {
+          transform: scale(1.15) rotate(0);
+        }
+      }
+      /** loading effect */
+      .loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: #343a40 !important;
+      }
+      .dot {
+        height: 15px;
+        width: 15px;
+        margin: 0 5px;
+        border-radius: 50%;
+        background-color: #343a40 !important;
+        animation: jump 0.6s infinite alternate;
+      }
+      .dot:nth-child(1) {
+        animation-delay: 0s;
+      }
+      .dot:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .dot:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+      @keyframes jump {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(-10px);
+        } /* Jump height */
+      }
+      /** modal icon */
+      .icon-intj {
+        max-width: 3.5rem;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <a class="btn text-light" href="/"
+        ><i class="fa fa-arrow-left" aria-hidden="true"></i
+      ></a>
+      <a class="navbar-brand" href="#">YELO1010 - 2025</a>
+      <div></div>
+    </nav>
+    <div class="container">
+      <div class="display">
+        <div class="display-item">
+          <div class="character">
+            <div class="character-info">
+              <span>Yelo</span>
+              <i
+                id="info-infp"
+                class="btn fa fa-info-circle p-0"
+                aria-hidden="true"
+                data-toggle="modal"
+                data-target="#modal-infp"
+              ></i>
+            </div>
+            <img class="mbti" src="infp.gif" alt="" />
+          </div>
+        </div>
+        <div class="display-item">
+          <div class="gift">
+            <div class="sending d-none d-md-block">
+              <div class="arrow">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <div
+              class="btn btn-dark btn-lg btn-gift"
+              data-toggle="modal"
+              data-target="#modal-result"
+            >
+              <div class="circle button-jittery">
+                <i
+                  class="fa fa-gift"
+                  aria-hidden="true"
+                  data-toggle="modal"
+                  data-target="#modal-result"
+                ></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="display-item">
+          <div class="character">
+            <div class="character-info">
+              <span>Mic</span>
+              <i
+                id="info-intj"
+                class="btn fa fa-info-circle p-0"
+                aria-hidden="true"
+                data-toggle="modal"
+                data-target="#modal-intj"
+              ></i>
+            </div>
+            <img class="mbti transform" src="intj.gif" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INFP Modal -->
+    <div
+      class="modal fade"
+      id="modal-infp"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="modelTitleId"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">YELO</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <canvas id="infp-chart"></canvas>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-dark btn-check"
+              data-dismiss="modal"
+            >
+              <i class="fa fa-check" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INTJ Modal -->
+    <div
+      class="modal fade"
+      id="modal-intj"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="modelTitleId"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Mickey</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <canvas id="intj-chart"></canvas>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-dark btn-check"
+              data-dismiss="modal"
+            >
+              <i class="fa fa-check" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Result Modal -->
+    <div
+      class="modal fade"
+      id="modal-result"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="modelTitleId"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">
+                <img class="icon-intj" src="intj.png" alt="">
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="loading">
+              <h2>正在計算結果</h2>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+            <canvas id="together-chart"></canvas>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-dark btn-check"
+              data-dismiss="modal"
+            >
+              <i class="fa fa-check" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Optional JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      infp = {
+        ctx: document.getElementById("infp-chart"),
+        data: {
+          labels: [
+            "打扮",
+            "情感",
+            "睡覺",
+            "食野",
+            "邏輯",
+            "外向",
+            "善良",
+          ],
+          datasets: [
+            {
+              label: "能力值",
+              data: [50, 50, 50, 50, 50, 50, 50],
+              fill: true,
+              backgroundColor: "rgba(75, 192, 192, 0.2)" /* Light green */,
+              borderColor: "rgb(75, 192, 192)" /* Green */,
+              pointBackgroundColor: "rgb(75, 192, 192)" /* Green */,
+              pointBorderColor: "#fff" /* White */,
+              pointHoverBackgroundColor: "#fff" /* White */,
+              pointHoverBorderColor: "rgb(75, 192, 192)" /* Green */,
+            },
+          ],
+        },
+      };
+      intj = {
+        ctx: document.getElementById("intj-chart"),
+        data: {
+          labels: [
+            "打扮",
+            "情感",
+            "睡覺",
+            "食野",
+            "邏輯",
+            "外向",
+            "善良",
+          ],
+          datasets: [
+            {
+              label: "能力值",
+              data: [38, 38, 45, 55, 100, 55, 45],
+              fill: true,
+              backgroundColor: "rgba(153, 102, 255, 0.2)" /* Light purple */,
+              borderColor: "rgb(153, 102, 255)" /* Purple */,
+              pointBackgroundColor: "rgb(153, 102, 255)" /* Purple */,
+              pointBorderColor: "#fff" /* White */,
+              pointHoverBackgroundColor: "#fff" /* White */,
+              pointHoverBorderColor: "rgb(153, 102, 255)",
+            },
+          ],
+        },
+      };
+      together = {
+        ctx: document.getElementById("together-chart"),
+        data: {
+          labels: [
+            "打扮",
+            "情感",
+            "睡覺",
+            "食野",
+            "邏輯",
+            "外向",
+            "善良",
+          ],
+          datasets: [
+            {
+              label: "Mic",
+              data: [38, 38, 45, 55, 100, 55, 45],
+              fill: true,
+              backgroundColor: "rgba(153, 102, 255, 0.2)" /* Light purple */,
+              borderColor: "rgb(153, 102, 255)" /* Purple */,
+              pointBackgroundColor: "rgb(153, 102, 255)" /* Purple */,
+              pointBorderColor: "#fff" /* White */,
+              pointHoverBackgroundColor: "#fff" /* White */,
+              pointHoverBorderColor: "rgb(153, 102, 255)",
+            },
+            {
+              label: "Yelo",
+              data: [55, 55, 55, 55, 55, 55, 55],
+              fill: true,
+              backgroundColor: "rgba(75, 192, 192, 0.2)" /* Light green */,
+              borderColor: "rgb(75, 192, 192)" /* Green */,
+              pointBackgroundColor: "rgb(75, 192, 192)" /* Green */,
+              pointBorderColor: "#fff" /* White */,
+              pointHoverBackgroundColor: "#fff" /* White */,
+              pointHoverBorderColor: "rgb(75, 192, 192)" /* Green */,
+            },
+          ],
+        },
+      };
+      const chartConfig = personality => {
+        return {
+          type: "radar",
+          data: personality.data,
+          options: {
+            elements: {
+              line: {
+                borderWidth: 3,
+              },
+            },
+          },
+        };
+      };
+      const displayTogether = () => {
+        const togetherElement = document.querySelector("#together-chart");
+        new Chart(togetherElement, chartConfig(together));
+        const header = document.querySelector("#modal-result").querySelector("h5").innerHTML += ` 恭喜你！獲得了一個薄荷雪糕 :3`;
+      };
+      $(document).ready(function () {
+        let hasResult = false;
+        new Chart(infp.ctx, chartConfig(infp))
+        new Chart(intj.ctx, chartConfig(intj))
+        const gift = document
+          .querySelector(".gift")
+          .addEventListener("click", () => {
+            if (!hasResult) {
+              hasResult = true;
+              setTimeout(() => {
+                document.querySelectorAll(".loading").forEach(e => e.remove());
+                //display modal
+                $("#matchModal").modal("show");
+                //display together
+                displayTogether();
+              }, 3000);
+            }
+          });
+      });
+    </script>
+  </body>
+</html>
